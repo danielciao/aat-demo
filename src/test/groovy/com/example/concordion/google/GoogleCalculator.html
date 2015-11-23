@@ -1,0 +1,52 @@
+<html lang="en" xmlns:concordion="http://www.concordion.org/2007/concordion">
+<head>
+    <title>Google Calculator</title>
+</head>
+<body>
+
+<h2>Examples</h2>
+
+<h3>Google Calculator</h3>
+
+<div class="example">
+    <p>
+        <b>Given</b> user has access to Google Calculator<br/>
+        <b>When</b> user input following numbers and operators<br/>
+        <b>Then</b> correct result is displayed
+    </p>
+    <table concordion:execute="#result = calculate(#firstOperand, #secondOperand, #operator)">
+        <tr>
+            <th concordion:set="#firstOperand">First Number</th>
+            <th concordion:set="#operator">Operator</th>
+            <th concordion:set="#secondOperand">Second Number</th>
+            <th concordion:assertEquals="#result">Result</th>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>+</td>
+            <td>3</td>
+            <td>12</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>-</td>
+            <td>3</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>*</td>
+            <td>3</td>
+            <td>27</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>/</td>
+            <td>3</td>
+            <td>3</td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

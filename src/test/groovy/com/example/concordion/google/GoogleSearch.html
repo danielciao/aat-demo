@@ -1,0 +1,23 @@
+<html lang="en" xmlns:concordion="http://www.concordion.org/2007/concordion">
+<head>
+    <title>Google Search</title>
+</head>
+<body>
+
+<h2>Examples</h2>
+
+<h3>Google Search</h3>
+
+<div class="example" concordion:execute="#result = search(#searchTerm)">
+    <h3>Search returns correct result</h3>
+
+    <p>
+        <b>Given</b> user has access to Google Search<br/>
+        <b>When</b> user search for <span concordion:set="#searchTerm">Google Headquarters</span><br/>
+        <b>Then</b> search returns with <span concordion:assertTrue="#result.expandBoxDisplayed">an expand box</span><br/>
+        <b>And</b> location is showing as <span concordion:assertEquals="#result.location">Mountain View, California, USA</span>
+    </p>
+</div>
+
+</body>
+</html>
